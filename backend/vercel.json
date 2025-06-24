@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 {
  "version": 2,
  "builds": [
@@ -13,4 +16,25 @@
    "dest": "server.js"
   }
  ]
+=======
+>>>>>>> e4c1d80 (Fix: Add missing react-helmet-async dependency)
+{
+ "version": 2,
+ "builds": [
+  {
+   "src": "server.js",
+   "use": "@vercel/node",
+   "config": { "includeFiles": ["dist/**"] }
+  }
+ ],
+ "routes": [
+  {
+   "src": "/(.*)",
+   "dest": "server.js"
+  }
+ ]
+<<<<<<< HEAD
+=======
+>>>>>>> 01a327f (Work before pull)
+>>>>>>> e4c1d80 (Fix: Add missing react-helmet-async dependency)
 }
