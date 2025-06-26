@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 11c3be9 (WIP: local changes before rebase)
 {
  "version": 2,
  "builds": [
@@ -16,6 +19,7 @@
    "dest": "server.js"
   }
  ]
+<<<<<<< HEAD
 =======
 >>>>>>> e4c1d80 (Fix: Add missing react-helmet-async dependency)
 {
@@ -37,4 +41,6 @@
 =======
 >>>>>>> 01a327f (Work before pull)
 >>>>>>> e4c1d80 (Fix: Add missing react-helmet-async dependency)
+=======
+>>>>>>> 11c3be9 (WIP: local changes before rebase)
 }

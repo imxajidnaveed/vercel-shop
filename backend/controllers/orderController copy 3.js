@@ -121,49 +121,6 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
-=======
-
-
-
-
-// @desc    Mark COD order as paid
-// @route   PUT /api/orders/:id/cod
-// @access  Private
-const updateOrderToPaidCOD = asyncHandler(async (req, res) => {
-  const order = await Order.findById(req.params.id).populate('user', 'email');
-
-  if (!order) {
-    res.status(404);
-    throw new Error('Order not found');
-  }
-
-  if (order.paymentMethod !== 'Cash on Delivery') {
-    res.status(400);
-    throw new Error('Payment method is not Cash on Delivery');
-  }
-
-  order.isPaid = true;
-  order.paidAt = Date.now();
-  order.paymentResult = {
-    id: 'COD',
-    status: 'Cash on Delivery',
-    update_time: new Date().toISOString(),
-    email_address: order.user?.email || 'N/A',
-  };
-
-  const updatedOrder = await order.save();
-  res.json(updatedOrder);
-});
-
-
-
-
-
-
-
-
->>>>>>> 11c3be9 (WIP: local changes before rebase)
 // @desc    Update order to delivered
 // @route   GET /api/orders/:id/deliver
 // @access  Private/Admin
@@ -197,9 +154,5 @@ export {
   getOrderById,
   updateOrderToPaid,
   updateOrderToDelivered,
-<<<<<<< HEAD
-=======
-  updateOrderToPaidCOD,
->>>>>>> 11c3be9 (WIP: local changes before rebase)
   getOrders,
 };

@@ -5,10 +5,6 @@ import {
   getMyOrders,
   getOrderById,
   updateOrderToPaid,
-<<<<<<< HEAD
-=======
-  updateOrderToPaidCOD, // ← NEW EXPORT
->>>>>>> 11c3be9 (WIP: local changes before rebase)
   updateOrderToDelivered,
   getOrders,
 } from '../controllers/orderController.js';
@@ -19,10 +15,5 @@ router.route('/mine').get(protect, getMyOrders);
 router.route('/:id').get(protect, getOrderById);
 router.route('/:id/pay').put(protect, updateOrderToPaid);
 router.route('/:id/deliver').put(protect, admin, updateOrderToDelivered);
-<<<<<<< HEAD
-=======
-router.route('/:id/cod').put(protect, updateOrderToPaidCOD);
-
->>>>>>> 11c3be9 (WIP: local changes before rebase)
 
 export default router;
