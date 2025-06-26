@@ -8,6 +8,13 @@ import CheckoutSteps from '../components/CheckoutSteps';
 import Loader from '../components/Loader';
 import { useCreateOrderMutation } from '../slices/ordersApiSlice';
 import { clearCartItems } from '../slices/cartSlice';
+<<<<<<< HEAD
+=======
+import axios from 'axios'; // at the top
+
+
+
+>>>>>>> ed07601 (proshopv13)
 
 const PlaceOrderScreen = () => {
   const navigate = useNavigate();
@@ -36,12 +43,27 @@ const PlaceOrderScreen = () => {
         taxPrice: cart.taxPrice,
         totalPrice: cart.totalPrice,
       }).unwrap();
+<<<<<<< HEAD
       dispatch(clearCartItems());
       navigate(`/order/${res._id}`);
     } catch (err) {
       toast.error(err);
     }
   };
+=======
+      
+    // 🟨 IF COD: mark paid & delivered automatically
+    if (cart.paymentMethod === 'Cash on Delivery') {
+      await axios.put(`/api/orders/${res._id}/cod`);
+    }
+
+    dispatch(clearCartItems());
+    navigate(`/order/${res._id}`);
+  } catch (err) {
+    toast.error(err?.data?.message || err.message);
+  }
+};
+>>>>>>> ed07601 (proshopv13)
 
   return (
     <>

@@ -8,11 +8,6 @@ import { savePaymentMethod } from '../slices/cartSlice';
 
 const PaymentScreen = () => {
   const navigate = useNavigate();
-<<<<<<< HEAD
-=======
-  const dispatch = useDispatch();
-
->>>>>>> ed07601 (proshopv13)
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
 
@@ -24,11 +19,8 @@ const PaymentScreen = () => {
 
   const [paymentMethod, setPaymentMethod] = useState('PayPal');
 
-<<<<<<< HEAD
   const dispatch = useDispatch();
 
-=======
->>>>>>> ed07601 (proshopv13)
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(savePaymentMethod(paymentMethod));
@@ -50,22 +42,7 @@ const PaymentScreen = () => {
               id='PayPal'
               name='paymentMethod'
               value='PayPal'
-<<<<<<< HEAD
               checked
-=======
-              checked={paymentMethod === 'PayPal'}
-              onChange={(e) => setPaymentMethod(e.target.value)}
-            ></Form.Check>
-
-            <Form.Check
-              className='my-2'
-              type='radio'
-              label='Cash on Delivery'
-              id='COD'
-              name='paymentMethod'
-              value='Cash on Delivery'
-              checked={paymentMethod === 'Cash on Delivery'}
->>>>>>> ed07601 (proshopv13)
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check>
           </Col>

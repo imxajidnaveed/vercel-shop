@@ -11,6 +11,10 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
+<<<<<<< HEAD
+=======
+import { HelmetProvider } from 'react-helmet-async';
+>>>>>>> ed07601 (proshopv13)
 import PrivateRoute from './components/PrivateRoute';
 import AdminRoute from './components/AdminRoute';
 import HomeScreen from './screens/HomeScreen';
@@ -38,12 +42,22 @@ const router = createBrowserRouter(
       <Route index={true} path='/' element={<HomeScreen />} />
       <Route path='/search/:keyword' element={<HomeScreen />} />
       <Route path='/page/:pageNumber' element={<HomeScreen />} />
+<<<<<<< HEAD
       <Route path='/search/:keyword/page/:pageNumber' element={<HomeScreen />} />
+=======
+      <Route
+        path='/search/:keyword/page/:pageNumber'
+        element={<HomeScreen />}
+      />
+>>>>>>> ed07601 (proshopv13)
       <Route path='/product/:id' element={<ProductScreen />} />
       <Route path='/cart' element={<CartScreen />} />
       <Route path='/login' element={<LoginScreen />} />
       <Route path='/register' element={<RegisterScreen />} />
+<<<<<<< HEAD
 
+=======
+>>>>>>> ed07601 (proshopv13)
       {/* Registered users */}
       <Route path='' element={<PrivateRoute />}>
         <Route path='/shipping' element={<ShippingScreen />} />
@@ -52,12 +66,22 @@ const router = createBrowserRouter(
         <Route path='/order/:id' element={<OrderScreen />} />
         <Route path='/profile' element={<ProfileScreen />} />
       </Route>
+<<<<<<< HEAD
 
+=======
+>>>>>>> ed07601 (proshopv13)
       {/* Admin users */}
       <Route path='' element={<AdminRoute />}>
         <Route path='/admin/orderlist' element={<OrderListScreen />} />
         <Route path='/admin/productlist' element={<ProductListScreen />} />
+<<<<<<< HEAD
         <Route path='/admin/productlist/:pageNumber' element={<ProductListScreen />} />
+=======
+        <Route
+          path='/admin/productlist/:pageNumber'
+          element={<ProductListScreen />}
+        />
+>>>>>>> ed07601 (proshopv13)
         <Route path='/admin/userlist' element={<UserListScreen />} />
         <Route path='/admin/product/:id/edit' element={<ProductEditScreen />} />
         <Route path='/admin/user/:id/edit' element={<UserEditScreen />} />
@@ -69,11 +93,21 @@ const router = createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+<<<<<<< HEAD
     <Provider store={store}>
       <PayPalScriptProvider deferLoading={true}>
         <RouterProvider router={router} />
       </PayPalScriptProvider>
     </Provider>
+=======
+    <HelmetProvider>
+      <Provider store={store}>
+        <PayPalScriptProvider deferLoading={true}>
+          <RouterProvider router={router} />
+        </PayPalScriptProvider>
+      </Provider>
+    </HelmetProvider>
+>>>>>>> ed07601 (proshopv13)
   </React.StrictMode>
 );
 
