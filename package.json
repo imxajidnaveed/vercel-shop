@@ -1,0 +1,53 @@
+{
+  "name": "proshop",
+  "version": "2.0.0",
+  "description": "Ecommerce Application",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node backend/seeder.js",
+    "data:destroy": "node backend/seeder.js -d",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imxajidnaveed/proshoper.git"
+  },
+  "author": "xajidnaveed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imxajidnaveed/proshoper/issues"
+  },
+  "homepage": "https://github.com/imxajidnaveed/proshoper#readme",
+  "dependencies": {
+    "@paypal/react-paypal-js": "^8.8.3",
+    "@reduxjs/toolkit": "^2.6.1",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
+    "colors": "^1.4.0",
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.13.2",
+    "morgan": "^1.10.0",
+    "multer": "^2.0.0",
+    "react-helmet": "^6.1.0",
+    "react-helmet-async": "^2.0.5",
+    "react-paypal-button-v2": "^2.6.3",
+    "react-redux": "^9.2.0",
+    "react-toastify": "^11.0.5",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^3.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "dotenv": "^16.4.7",
+    "nodemon": "^3.1.9"
+  }
+}
